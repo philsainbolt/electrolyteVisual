@@ -1,0 +1,44 @@
+Date,Fluid,Advertised as,Type of Product, Price Per Package ,Servings Per Container, Price Per Serving ,Serving Size (oz),Cation Electrolytes per Serving,Cation Electrolyes per 16oz Serving, Price Per 16 oz Serving , Price per 1000mg in 16 oz ,Sodium (mg),Potassium (mg),Calcium (mg),Magneisum (mg),Phosphorus,Iron (mg),Zinc (mg),manganese (mg),Chloride (mg)
+8/13/2025,Gatorade Powder,Electrolyte,Bulk Powder, $14.96 ,94, $0.16 ,12,210,280, $0.21 , $0.76 ,160,50,,,,,,,
+8/13/2025,Just Ingredients Electrolyte Powder - Raspberry Lemonade,Electrolyte,Bulk Powder, $22.49 ,30, $0.75 ,16,515,515, $0.75 , $1.46 ,115,300,50,50,,0,,,145
+7/31/2025,Key Nutrients - Electrolytes Powder,Electrolyte,Bulk Powder, $35.99 ,90, $0.40 ,16,672.9,672.9, $0.40 , $0.59 ,110,250,110,100,100,,2.9,,160
+6/26/2025,Relyte - Unflavored 16 oz w/ powder,Electrolyte,Bulk Powder, $44.99 ,75, $0.60 ,16,1560,1560, $0.60 , $0.38 ,1000,500,,60,,,,,1585
+6/26/2025,Relyte Strawberry 16oz. w/ powder,Electrolyte,Bulk Powder, $44.99 ,60, $0.75 ,16,1320,1320, $0.75 , $0.57 ,810,400,60,50,,,,,1280
+6/30/2025,"Re-Lyte Energy Limeade - 14 oz, w/ powder",Electrolyte - Energy,Bulk Powder, $46.99 ,45, $1.04 ,14,945,1080, $1.19 , $1.10 ,500,350,55,40,,,,,790
+6/30/2025,Re-Lyte Kids Grape - 16 oz w/powder,Electrolyte - Kids,Bulk Powder, $34.99 ,45, $0.78 ,16,565,565, $0.78 , $1.38 ,340,150,50,25,,,,,540
+6/30/2025,"Re-Lyte Immunity Pineapple Orange - 14 oz, w/ powder",Electrolyte - Vitamins,Bulk Powder, $47.47 ,45, $1.05 ,14,926.6,1058.971429, $1.21 , $1.14 ,490,330,50,40,,,15,1.6,770
+8/13/2025,Ultima Grape,Electrolyte,Bulk Powder, $19.99 ,30, $0.67 ,16,523.2,523.2, $0.67 , $1.27 ,55,250,47,100,70,,1,0.2,0.04
+8/13/2025,Wilderness Athlete - Hydrate and Recover Tub,Electrolyte - Vitamins,Bulk Powder, $44.95 ,30, $1.50 ,8,266.5,533, $3.00 , $5.62 ,100,125,,40,,,1.5,,
+6/26/2025,Bodyarmour Lyte - Peach Mango RTD,Electrolyte,RTD, $1.67 ,1, $1.67 ,16,992.9,992.9, $1.67 , $1.68 ,30,680,200,75,,0.2,7.7,,
+6/26/2025,"Conconut Water - Original, Simple Truth Organic RTD",Electrolyte,RTD, $1.89 ,1, $1.89 ,16.9,1530,1448.52071, $1.79 , $1.24 ,180,1180,100,70,,,,,
+6/23/2025,Electrolit Grape,Electrolyte,RTD, $2.50 ,2, $1.25 ,12,580,773.3333333, $1.67 , $2.16 ,250,280,30,20,,,,,380
+6/23/2025,"Gatorade Lemon Lime, RTD",Electrolyte,RTD, $1.99 ,2.5, $0.80 ,12,210,280, $1.06 , $3.79 ,160,50,,,,,,,
+6/23/2025,"Hydrolit Coconut, RTD",Electrolyte,RTD, $2.50 ,1, $2.50 ,21.1,666,505.0236967, $1.90 , $3.75 ,390,90,140,40,,0,6,,270
+7/31/2025,"LMNT - sparkling Electrolyte drink, decarbonated",Electrolyte,RTD, $32.99 ,12, $2.75 ,16,1260,1260, $2.75 , $2.18 ,1000,200,,60,,,,,
+6/23/2025,"Powerade Fruit Punch, RTD",Electrolyte,RTD, $1.89 ,2.5, $0.76 ,12,330,440, $1.01 , $2.29 ,240,80,10,,,,,,
+6/26/2025,"Prime - Cherry Freeze, RTD",Electrolyte,RTD, $1.67 ,1, $1.67 ,16.9,845,800, $1.58 , $1.98 ,20,700,,125,,,,,
+6/26/2025,"Propel Fitness Water - Berry, RTD",Electrolyte,RTD, $1.67 ,1, $1.67 ,20,340,272, $1.34 , $4.91 ,270,70,,,,,,,
+6/26/2025,"Comforts- Berry Frost, RTD",Electrolyte - kids,RTD, $3.99 ,3, $1.33 ,12,772.8,1030.4, $1.77 , $1.72 ,490,280,,,,,2.8,,630
+6/26/2025,"Kinderlyte - Fruit Punch, RTD",Electrolyte - kids,RTD, $5.49 ,3, $1.83 ,12,773.1,1030.8, $2.44 , $2.37 ,460,310,,,,,3.1,,570
+6/26/2025,"Pedialyte - Strawberry, RTD",Electrolyte - kids,RTD, $5.99 ,3, $2.00 ,12,672.8,897.0666667, $2.66 , $2.97 ,390,280,,,,,2.8,,440
+6/30/2025,Crystal Light Lemonade,Drink,Stick Pack, $2.99 ,10, $0.30 ,16.9,205,194.0828402, $0.28 , $1.46 ,75,130,,,,,,,
+6/26/2025,"Bodyarmour Flash IV - zero sugar - lemon lime, 16 oz w/powder",Electrolyte,Stick Pack, $6.99 ,6, $1.17 ,16,1366,1366, $1.17 , $0.85 ,510,700,80,65,,,11,,860
+8/13/2025,"Bucked Up Hydration - Strawberry Lemonade Variety Pack, 18 pack",Electrolyte,Stick Pack, $23.99 ,18, $1.33 ,12,600,800, $1.78 , $2.22 ,200,400,,,,,,,
+7/31/2025,Cure Electrolyte Drink Mix,Electrolyte,Stick Pack, $42.28 ,28, $1.51 ,16,555,555, $1.51 , $2.72 ,240,315,0,0,0,0,,,
+6/26/2025,DripDrop - Berry 8 oz w/powder,Electrolyte,Stick Pack, $9.99 ,8, $1.25 ,8,554.5,1109, $2.50 , $2.25 ,330,188,,35,,,1.5,,
+6/26/2025,"Electrolit - Strawberry-Kiwi, 16oz w/ powder",Electrolyte,Stick Pack, $6.99 ,6, $1.17 ,16,767,767, $1.17 , $1.52 ,330,376,40,21,,,,,345
+6/26/2025,"Gatorade Hydration Booster - Strawberry Watermelon, 10 g Packet, 20 oz",Electrolyte,Stick Pack, $7.49 ,6, $1.25 ,20,394,315.2, $1.00 , $3.17 ,300,94,,,,,,,
+6/26/2025,"Gatorade Zero powder, orange, 16 oz w/ powder",Electrolyte,Stick Pack, $4.99 ,10, $0.50 ,16,310,310, $0.50 , $1.61 ,240,70,,,,,,,
+6/26/2025,"Gatorlyte rapid rehydration - Orange, 16.9 oz w/ powder",Electrolyte,Stick Pack, $8.49 ,6, $1.42 ,16.9,915,866.2721893, $1.34 , $1.55 ,420,300,100,95,,,,,640
+6/26/2025,Liquid IV Sugar-Free Lemon Lime 16 oz w/ powder,Electrolyte,Stick Pack, $9.99 ,6, $1.67 ,10,770,1232, $2.66 , $2.16 ,530,240,,,,,,,
+6/26/2025,LMNT Orange 16 oz water w/ powder,Electrolyte,Stick Pack, $16.99 ,10, $1.70 ,16,1260,1260, $1.70 , $1.35 ,1000,200,0,60,,0,,,
+8/25/2025,"Mountain Ops Electrolyte - Blue Rasp, 30 pack variety",Electrolyte,Stick Pack, $29.95 ,30, $1.00 ,16,337,337, $-   , $-   ,55,205,,70,,,3,4,95
+7/31/2025,Nuun Sport Hydration (tablet),Electrolyte,Stick Pack, $22.81 ,60, $0.38 ,16,488,488, $0.38 , $0.78 ,300,150,13,25,,,,,40
+6/26/2025,"Propel Fitness Water zero Sugar Powder - Grape, 16 oz w/ poweder",Electrolyte,Stick Pack, $4.99 ,10, $0.50 ,16,290,290, $0.50 , $1.72 ,220,70,,,,,,,
+6/26/2025,Relyte - Lemon Lime Packet 16 oz ,Electrolyte,Stick Pack, $39.99 ,30, $1.33 ,16,1320,1320, $1.33 , $1.01 ,810,400,60,50,,,,,1280
+8/13/2025,SaltT Electrolyte Drink Mix - Mixed Variety (Cherry),Electrolyte,Stick Pack, $19.95 ,15, $1.33 ,16,1564,1564, $1.33 , $0.85 ,969,415,2,178,,,,,
+6/26/2025,Simple Truth HydrationMix - Mixed Berry 16.9 oz w/ powder,Electrolyte,Stick Pack, $5.99 ,6, $1.00 ,16.9,890,842.6035503, $0.95 , $1.12 ,500,390,0,,,0,,,
+8/31/2025,Tactical Electrolyte Tablets,Electrolyte,Stick Pack, $16.99 ,40, $0.42 ,8,525,1050, $0.85 , $0.81 ,320,160,15,30,,,,,
+7/31/2025,Thorne - Daily Electrolytes - powder,Electrolyte,Stick Pack, $39.00 ,30, $1.30 ,12,689,918.6666667, $1.73 , $1.89 ,480,99,70,40,,0,,,750
+6/26/2025,TruLabs Hydrate - Glacier 16 oz w/ powder,Electrolyte,Stick Pack, $9.97 ,6, $1.66 ,16,622,622, $1.66 , $2.67 ,500,83,30,9,,,,,800
+8/13/2025,"Zeal Enhanced Electrolytes - Variety Pack, Black Cherry",Electrolyte,Stick Pack, $23.39 ,20, $1.17 ,14,615,702.8571429, $1.34 , $1.90 ,250,300,30,30,,,5,,
