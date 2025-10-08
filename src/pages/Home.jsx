@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Chart from '../components/Chart';
+import ComparisonBarChart from '../components/ComparisonBarChart_v2';
 import { parseElectrolyteData, getDataSummary } from '../utils/dataParser';
 
 const Home = () => {
@@ -65,7 +66,7 @@ const Home = () => {
         <div className="bg-white rounded-xl shadow-xl p-8 mb-8">
           <div className="text-center mb-6">
             <p className="text-sm text-gray-600 mb-2">
-              Hover over any circle for detailed breakdown • Click legend to filter product types
+              Hover over any circle for detailed breakdown
             </p>
             <p className="text-xs text-gray-500">
               <span className="inline-block w-3 h-3 rounded-full bg-emerald-500 mr-1"></span> Bulk Powder
@@ -84,6 +85,22 @@ const Home = () => {
               </p>
             </div>
           )}
+        </div>
+
+        {/* Quick Brand Comparison Section */}
+        <div className="bg-white rounded-xl shadow-xl p-8 mb-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-relyte-blue mb-2">
+              Quick Brand Comparison
+            </h2>
+            <p className="text-sm text-gray-600">
+              See how Re-Lyte stacks up against leading competitors on price per 1000mg
+            </p>
+          </div>
+          <ComparisonBarChart data={data} />
+          <div className="mt-4 text-center text-xs text-gray-500">
+            <p>Lower price per 1000mg = better value • Numbers in parentheses show cost multiplier vs Re-Lyte</p>
+          </div>
         </div>
 
         {/* Methodology Section */}

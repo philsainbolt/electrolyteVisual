@@ -43,6 +43,7 @@ const getBrandSlug = (fluidName) => {
   if (name.includes('prime')) return 'prime';
   if (name.includes('kinderlyte')) return 'kinderlyte';
   if (name.includes('drip')) return 'dripdrop';
+  if (name.includes('mountain')) return 'mountainops';
   return 'generic';
 };
 
@@ -57,20 +58,48 @@ export const parseElectrolyteData = async (csvPath) => {
       complete: (results) => {
 
         const processedData = results.data
-          .filter(row => row.Fluid && row[' Price per 1000mg in 16 oz ']) // Filter valid rows
+          .filter(row => row.Fluid) // Only need brand name
           .map(row => {
-            const pricePerThousand = parseFloat(
-              String(row[' Price per 1000mg in 16 oz '] || '0').replace('$', '').trim()
+            let pricePerThousand = parseFloat(
+              String(row[' Price per 1000mg in 16 oz '] || '0').replace('$', '').replace('-', '').trim()
             );
             const totalElectrolytes = parseFloat(
               String(row['Cation Electrolyes per 16oz Serving'] || '0').replace(',', '')
             );
-            const pricePerServing = parseFloat(
-              String(row[' Price Per 16 oz Serving '] || '0').replace('$', '').trim()
+
+            // Try to get price per 16oz serving
+            let pricePerServing = parseFloat(
+              String(row[' Price Per 16 oz Serving '] || '0').replace('$', '').replace('-', '').trim()
             );
+
+            // Fallback: if missing and serving size is 16oz, use Price Per Serving
+            if ((!pricePerServing || pricePerServing === 0 || isNaN(pricePerServing))) {
+              const servingSize = parseFloat(String(row['Serving Size (oz)'] || '0'));
+              const pricePerServingRaw = parseFloat(
+                String(row[' Price Per Serving '] || '0').replace('$', '').replace('-', '').trim()
+              );
+
+              if (pricePerServingRaw > 0 && servingSize > 0) {
+                // Calculate price per 16oz from price per serving
+                pricePerServing = (pricePerServingRaw * 16) / servingSize;
+              }
+            }
+
+            // Calculate missing pricePerThousand if we have the components
+            if ((!pricePerThousand || pricePerThousand === 0 || isNaN(pricePerThousand))
+                && pricePerServing > 0 && totalElectrolytes > 0) {
+              pricePerThousand = pricePerServing / (totalElectrolytes / 1000);
+            }
 
             const brandSlug = getBrandSlug(row.Fluid);
             const isRelyte = brandSlug === 'relyte';
+
+            // Try PNG first, fallback to SVG
+            let logoPath = `/logos/${brandSlug}.png`;
+            // For brands we know have SVG only
+            if (['liquid-iv', 'electrolit', 'generic'].includes(brandSlug)) {
+              logoPath = `/logos/${brandSlug}.svg`;
+            }
 
             return {
               brand: row.Fluid,
@@ -82,7 +111,7 @@ export const parseElectrolyteData = async (csvPath) => {
               potassium: row['Potassium (mg)'] || 0,
               calcium: row['Calcium (mg)'] || 0,
               magnesium: row['Magneisum (mg)'] || 0,
-              logoPath: `/logos/${brandSlug}.png`,
+              logoPath,
               isRelyte,
               brandSlug,
             };

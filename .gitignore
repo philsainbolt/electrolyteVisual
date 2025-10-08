@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+specs/
+.vercel
+
+.claude/
+
+node_modules/
+
+dist/

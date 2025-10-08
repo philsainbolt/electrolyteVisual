@@ -30,8 +30,13 @@ const getProductColor = (type, isRelyte) => {
 
 const CustomShape = (props) => {
   const { cx, cy, payload } = props;
-  const size = payload.isRelyte ? 40 : 32;
+  const size = payload.isRelyte ? 60 : 48;
   const color = getProductColor(payload.type, payload.isRelyte);
+  const logoSize = payload.isRelyte ? 52 : 42;
+  const [imageError, setImageError] = React.useState(false);
+
+  // Don't show logo for generic placeholder
+  const shouldShowLogo = payload.logoPath && !payload.logoPath.includes('generic.svg') && !imageError;
 
   return (
     <g>
@@ -41,43 +46,66 @@ const CustomShape = (props) => {
           <circle
             cx={cx}
             cy={cy}
-            r={size / 2 + 8}
+            r={size / 2 + 12}
             fill="none"
             stroke="#3B82F6"
-            strokeWidth="2"
+            strokeWidth="3"
             opacity="0.3"
           />
           <circle
             cx={cx}
             cy={cy}
-            r={size / 2 + 4}
+            r={size / 2 + 6}
             fill="none"
             stroke="#3B82F6"
-            strokeWidth="2"
+            strokeWidth="2.5"
             opacity="0.5"
           />
         </>
       )}
 
-      {/* Main circle */}
+      {/* Background circle */}
       <circle
         cx={cx}
         cy={cy}
         r={size / 2}
-        fill={color}
-        stroke="white"
-        strokeWidth="2.5"
-        opacity={payload.isRelyte ? 1 : 0.85}
+        fill="white"
+        stroke={payload.isRelyte ? '#1E3A8A' : color}
+        strokeWidth="3.5"
+        opacity={1}
         style={{ cursor: 'pointer' }}
       />
+
+      {/* Logo image */}
+      {shouldShowLogo ? (
+        <image
+          href={payload.logoPath}
+          x={cx - logoSize / 2}
+          y={cy - logoSize / 2}
+          width={logoSize}
+          height={logoSize}
+          style={{ cursor: 'pointer' }}
+          clipPath={`circle(${logoSize / 2.2}px at ${logoSize / 2}px ${logoSize / 2}px)`}
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        /* Colored circle when no logo or logo fails */
+        <circle
+          cx={cx}
+          cy={cy}
+          r={(size / 2) - 4}
+          fill={color}
+          opacity={0.85}
+        />
+      )}
 
       {/* Star indicator for Re-Lyte */}
       {payload.isRelyte && (
         <text
           x={cx}
-          y={cy + 5}
+          y={cy + logoSize / 2 + 16}
           textAnchor="middle"
-          fill="white"
+          fill="#1E3A8A"
           fontSize="16"
           fontWeight="bold"
         >
@@ -104,10 +132,10 @@ const Chart = ({ data }) => {
   const relyteData = data.filter(d => d.isRelyte);
 
   return (
-    <div className="w-full h-[600px]">
+    <div className="w-full h-[1000px]">
       <ResponsiveContainer width="100%" height="100%">
         <ScatterChart
-          margin={{ top: 20, right: 80, bottom: 60, left: 60 }}
+          margin={{ top: 20, right: 100, bottom: 80, left: 120 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
 
@@ -119,11 +147,11 @@ const Chart = ({ data }) => {
             label={{
               value: 'Price per 1000mg ($) → Lower is Better',
               position: 'bottom',
-              offset: 40,
-              style: { fontSize: 14, fontWeight: 600 }
+              offset: 50,
+              style: { fontSize: 17, fontWeight: 700, fill: '#1F2937' }
             }}
             domain={[0, 'auto']}
-            tick={{ fontSize: 12 }}
+            tick={{ fontSize: 13 }}
           />
 
           <YAxis
@@ -135,20 +163,16 @@ const Chart = ({ data }) => {
               value: 'Total Electrolytes per 16oz (mg) → Higher is Better',
               angle: -90,
               position: 'left',
-              offset: 40,
-              style: { fontSize: 14, fontWeight: 600 }
+              offset: 15,
+              style: { fontSize: 17, fontWeight: 700, fill: '#1F2937', textAnchor: 'middle' }
             }}
             domain={[0, 'auto']}
-            tick={{ fontSize: 12 }}
+            tick={{ fontSize: 13 }}
           />
 
           <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
 
-          <Legend
-            verticalAlign="top"
-            height={50}
-            wrapperStyle={{ fontSize: 13, fontWeight: 600, paddingBottom: 10 }}
-          />
+          {/* Legend removed - using custom legend in UI instead */}
 
           {/* Reference line for average price */}
           <ReferenceLine

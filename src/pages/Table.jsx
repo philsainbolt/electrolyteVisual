@@ -109,8 +109,8 @@ const Table = () => {
   });
 
   const SortIcon = ({ columnKey }) => {
-    if (sortConfig.key !== columnKey) return <span className="text-gray-400">�</span>;
-    return sortConfig.direction === 'asc' ? <span>�</span> : <span>�</span>;
+    if (sortConfig.key !== columnKey) return <span className="text-gray-400">◆</span>;
+    return sortConfig.direction === 'asc' ? <span>▲</span> : <span>▼</span>;
   };
 
   const productTypes = ['all', ...new Set(data.map(d => d.type))];
@@ -152,7 +152,7 @@ const Table = () => {
             onClick={downloadCSV}
             className="bg-relyte-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-relyte-accent transition-colors shadow-md"
           >
-            =� Download CSV
+            ⬇ Download CSV
           </button>
         </div>
 
@@ -202,7 +202,7 @@ const Table = () => {
                   >
                     <td className="px-4 py-3 text-left">
                       <div className="flex items-center gap-2">
-                        {row.isRelyte && <span className="text-relyte-accent">P</span>}
+                        {row.isRelyte && <span className="text-relyte-accent">★</span>}
                         {row.brand}
                       </div>
                     </td>
@@ -226,7 +226,7 @@ const Table = () => {
         {/* Footer Note */}
         <div className="mt-6 text-center text-sm text-gray-600">
           <p>
-            P = Re-Lyte Product | Click column headers to sort | All prices normalized to 16oz servings
+            ★ = Re-Lyte Product | Click column headers to sort | All prices normalized to 16oz servings
           </p>
         </div>
       </div>
