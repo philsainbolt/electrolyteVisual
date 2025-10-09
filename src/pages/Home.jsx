@@ -50,7 +50,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-relyte-light to-white">
+    <div className="min-h-screen bg-gradient-to-br from-relyte-light to-white transform scale-75 origin-top">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
         <div className="text-center mb-10">
@@ -104,7 +104,7 @@ const Home = () => {
         </div>
 
         {/* Methodology Section */}
-        <div className="bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
+        <div className="bg-white rounded-xl shadow-xl p-8">
           <h3 className="text-lg font-bold text-relyte-blue mb-3">
             About This Metric
           </h3>

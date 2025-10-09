@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ScatterChart,
   Scatter,
@@ -29,7 +29,7 @@ const getProductColor = (type, isRelyte) => {
 };
 
 const CustomShape = (props) => {
-  const { cx, cy, payload } = props;
+  const { cx, cy, payload, onHover, onLeave } = props;
   const size = payload.isRelyte ? 60 : 48;
   const color = getProductColor(payload.type, payload.isRelyte);
   const logoSize = payload.isRelyte ? 52 : 42;
@@ -39,7 +39,10 @@ const CustomShape = (props) => {
   const shouldShowLogo = payload.logoPath && !payload.logoPath.includes('generic.svg') && !imageError;
 
   return (
-    <g>
+    <g
+      onMouseEnter={() => onHover && onHover(payload)}
+      onMouseLeave={() => onLeave && onLeave()}
+    >
       {/* Glow effect for Re-Lyte products */}
       {payload.isRelyte && (
         <>
@@ -117,6 +120,8 @@ const CustomShape = (props) => {
 };
 
 const Chart = ({ data }) => {
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+
   if (!data || data.length === 0) {
     return (
       <div className="flex items-center justify-center h-96">
@@ -130,6 +135,14 @@ const Chart = ({ data }) => {
   const rtd = data.filter(d => d.type === 'RTD' && !d.isRelyte);
   const stickPack = data.filter(d => d.type === 'Stick Pack' && !d.isRelyte);
   const relyteData = data.filter(d => d.isRelyte);
+
+  const handleHover = (payload) => {
+    setHoveredProduct(payload);
+  };
+
+  const handleLeave = () => {
+    setHoveredProduct(null);
+  };
 
   return (
     <div className="w-full h-[1000px]">
@@ -187,21 +200,39 @@ const Chart = ({ data }) => {
             name="Bulk Powder"
             data={bulkPowder}
             fill="#10B981"
-            shape={<CustomShape />}
+            shape={(props) => (
+              <CustomShape
+                {...props}
+                onHover={handleHover}
+                onLeave={handleLeave}
+              />
+            )}
           />
 
           <Scatter
             name="RTD (Ready-to-Drink)"
             data={rtd}
             fill="#F59E0B"
-            shape={<CustomShape />}
+            shape={(props) => (
+              <CustomShape
+                {...props}
+                onHover={handleHover}
+                onLeave={handleLeave}
+              />
+            )}
           />
 
           <Scatter
             name="Stick Pack"
             data={stickPack}
             fill="#8B5CF6"
-            shape={<CustomShape />}
+            shape={(props) => (
+              <CustomShape
+                {...props}
+                onHover={handleHover}
+                onLeave={handleLeave}
+              />
+            )}
           />
 
           {/* Re-Lyte products scatter (rendered on top) */}
@@ -209,8 +240,29 @@ const Chart = ({ data }) => {
             name="Re-Lyte ★"
             data={relyteData}
             fill="#1E3A8A"
-            shape={<CustomShape />}
+            shape={(props) => (
+              <CustomShape
+                {...props}
+                onHover={handleHover}
+                onLeave={handleLeave}
+              />
+            )}
           />
+
+          {/* Overlay scatter for hovered product - renders on top */}
+          {hoveredProduct && (
+            <Scatter
+              data={[hoveredProduct]}
+              fill={getProductColor(hoveredProduct.type, hoveredProduct.isRelyte)}
+              shape={(props) => (
+                <CustomShape
+                  {...props}
+                  onHover={handleHover}
+                  onLeave={handleLeave}
+                />
+              )}
+            />
+          )}
         </ScatterChart>
       </ResponsiveContainer>
     </div>
