@@ -31,14 +31,21 @@ const ComparisonBarChart = ({ data }) => {
     if (!majorBrands.includes(slug)) return;
     if (!product.pricePerThousand || product.pricePerThousand <= 0 || product.pricePerThousand > 10) return;
 
-    if (!brandMap.has(slug) || product.pricePerThousand < brandMap.get(slug).pricePerThousand) {
+    // Special case: prefer Strawberry for Re-Lyte
+    if (slug === 'relyte') {
+      if (product.brand.includes('Strawberry')) {
+        brandMap.set(slug, product);
+      } else if (!brandMap.has(slug)) {
+        brandMap.set(slug, product);
+      }
+    } else if (!brandMap.has(slug) || product.pricePerThousand < brandMap.get(slug).pricePerThousand) {
       brandMap.set(slug, product);
     }
   });
 
   // Sort by price and prepare chart data
   const sortedProducts = Array.from(brandMap.values())
-    .sort((a, b) => a.pricePerThousand - b.pricePerThousand)
+    .sort((a, b) => b.pricePerThousand - a.pricePerThousand)
     .slice(0, 10);
 
   // Find Re-Lyte price for multiplier calculation
@@ -67,7 +74,7 @@ const ComparisonBarChart = ({ data }) => {
     if (!item) return null;
 
     const centerX = x + width / 2;
-    const logoSize = 40;
+    const logoSize = item.isRelyte ? 55 : 40;
     const logoY = y - 85; // Position logo above bar
     const priceY = y - 10; // Price label on top of bar
     const multiplierY = y - 25; // Multiplier above price
@@ -133,7 +140,7 @@ const ComparisonBarChart = ({ data }) => {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={chartData}
-          margin={{ top: 100, right: 40, bottom: 60, left: 60 }}
+          margin={{ top: 100, right: 40, bottom: 100, left: 60 }}
         >
           {/* Gradient definitions for Re-Lyte bar */}
           <defs>
@@ -154,10 +161,11 @@ const ComparisonBarChart = ({ data }) => {
 
           <XAxis
             dataKey="name"
-            textAnchor="middle"
-            height={60}
+            textAnchor="end"
+            height={80}
             interval={0}
-            tick={{ fontSize: 12, fontWeight: 500 }}
+            angle={-45}
+            tick={{ fontSize: 11, fontWeight: 500 }}
           />
 
           <YAxis

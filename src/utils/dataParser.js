@@ -97,7 +97,7 @@ export const parseElectrolyteData = async (csvPath) => {
             // Try PNG first, fallback to SVG
             let logoPath = `/logos/${brandSlug}.png`;
             // For brands we know have SVG only
-            if (['liquid-iv', 'electrolit', 'generic'].includes(brandSlug)) {
+            if (['electrolit', 'generic'].includes(brandSlug)) {
               logoPath = `/logos/${brandSlug}.svg`;
             }
 
