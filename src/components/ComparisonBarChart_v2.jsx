@@ -136,7 +136,7 @@ const ComparisonBarChart = ({ data }) => {
   };
 
   return (
-    <div className="w-full" style={{ height: '700px' }}>
+    <div className="w-full" style={{ height: 'clamp(400px, 70vh, 700px)' }}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={chartData}

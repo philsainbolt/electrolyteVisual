@@ -50,7 +50,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-relyte-light to-white transform scale-75 origin-top">
+    <div className="min-h-screen bg-gradient-to-br from-relyte-light to-white">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
         <div className="text-center mb-10">
@@ -63,9 +63,9 @@ const Home = () => {
         </div>
 
         {/* Chart Section */}
-        <div className="bg-white rounded-xl shadow-xl p-8 mb-8">
+        <div className="bg-white rounded-xl shadow-xl p-4 md:p-8 mb-8">
           <div className="text-center mb-6">
-            <p className="text-sm text-gray-600 mb-2">
+            <p className="text-xs md:text-sm text-gray-600 mb-2">
               Hover over any circle for detailed breakdown
             </p>
             <p className="text-xs text-gray-500">
@@ -88,12 +88,12 @@ const Home = () => {
         </div>
 
         {/* Quick Brand Comparison Section */}
-        <div className="bg-white rounded-xl shadow-xl p-8 mb-8">
+        <div className="bg-white rounded-xl shadow-xl p-4 md:p-8 mb-8">
           <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-relyte-blue mb-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-relyte-blue mb-2">
               Quick Brand Comparison
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-xs md:text-sm text-gray-600">
               See how Re-Lyte stacks up against leading competitors on price per 1000mg
             </p>
           </div>
@@ -104,11 +104,11 @@ const Home = () => {
         </div>
 
         {/* Methodology Section */}
-        <div className="bg-white rounded-xl shadow-xl p-8">
-          <h3 className="text-lg font-bold text-relyte-blue mb-3">
+        <div className="bg-white rounded-xl shadow-xl p-4 md:p-8">
+          <h3 className="text-base md:text-lg font-bold text-relyte-blue mb-3">
             About This Metric
           </h3>
-          <div className="text-gray-700 text-sm space-y-3">
+          <div className="text-gray-700 text-xs md:text-sm space-y-3">
             <p>
               <strong>Price per 1000mg</strong> normalizes cost against total electrolyte content
               (sodium, potassium, calcium, magnesium) for fair comparison across all product types.

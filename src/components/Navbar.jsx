@@ -31,6 +31,16 @@ const Navbar = () => {
               Chart
             </Link>
             <Link
+              to="/sodium-potassium"
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                isActive('/sodium-potassium')
+                  ? 'bg-white text-relyte-blue font-semibold'
+                  : 'hover:bg-relyte-accent'
+              }`}
+            >
+              Sodium vs Potassium
+            </Link>
+            <Link
               to="/table"
               className={`px-4 py-2 rounded-lg transition-colors ${
                 isActive('/table')

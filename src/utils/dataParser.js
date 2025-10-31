@@ -24,6 +24,10 @@ const logoMapping = {
   'Propel Fitness Water - Berry, RTD': '/logos/propel.png',
   'Propel Fitness Water zero Sugar Powder - Grape, 16 oz w/ poweder': '/logos/propel.png',
   'Powerade Fruit Punch, RTD': '/logos/powerade.png',
+  'Mountain Ops Electrolyte - Blue Rasp, 30 pack variety': '/logos/mountainops.png',
+  'Bucked Up Hydration - Strawberry Lemonade Variety Pack, 18 pack': '/logos/buckedup.png',
+  'Wilderness Athlete - Hydrate and Recover Tub': '/logos/wildernessathlete.png',
+  'Prime - Cherry Freeze, RTD': '/logos/prime.png',
 };
 
 // Get brand name slug for logo (simplified version)
@@ -44,6 +48,8 @@ const getBrandSlug = (fluidName) => {
   if (name.includes('kinderlyte')) return 'kinderlyte';
   if (name.includes('drip')) return 'dripdrop';
   if (name.includes('mountain')) return 'mountainops';
+  if (name.includes('bucked up')) return 'buckedup';
+  if (name.includes('wilderness athlete')) return 'wildernessathlete';
   return 'generic';
 };
 

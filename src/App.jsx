@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Table from './pages/Table';
+import SodiumPotassium from './pages/SodiumPotassium';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/sodium-potassium" element={<SodiumPotassium />} />
           <Route path="/table" element={<Table />} />
         </Routes>
       </div>
